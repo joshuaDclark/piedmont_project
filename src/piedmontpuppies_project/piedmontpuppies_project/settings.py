@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'piedmontpuppies_project',
+
+    # third party
+
+    #own
+    'questionaire',
+
 ]
 
 MIDDLEWARE = [
