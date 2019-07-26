@@ -1,0 +1,13 @@
+{% extends 'login_form.html' %}
+
+
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign-in</button>
+    </form>
+{% endblock %}

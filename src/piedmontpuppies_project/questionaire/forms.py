@@ -1,15 +1,12 @@
 from django import forms
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
-from people.models import Person
+from Questionaire.models import Person
 
-class PersonForm(forms.ModelForm):
-    class Meta:
-        model = Person
-        fields = ('name', 'email', 'job_title', 'bio')
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Save person'))
+class PersonForm(forms.Form):
+    last_name = forms.CharField(max_length=130)
+    first_name = forms.CharField(max_length=130)
+    email = forms.EmailField()
+    address = forms.CharField(max_length=30)
+    city = forms.CharField(max_length=30)
+    state = forms.CharField(max_length=30)
+    zip_code = forms.CharField(max_length=5)
+    phone = forms.CharField(max_length=10)

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'piedmontpuppies_project.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'bootstrap4',
+    'fontawesome',
 
 
     #own
     'registration',
+    'account',
     'Questionaire.apps.QuestionaireConfig',
 
 
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'piedmontpuppies_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS= [
+    'static'
+]
+
+LOGIN_REDIRECT_URL = '/admin/Questionaire/person/'
+LOGOUT_REDIRECT_URL = 'home'

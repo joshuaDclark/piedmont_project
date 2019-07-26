@@ -1,10 +1,24 @@
-<!doctype html>
+{% block content %}
 <html>
-<head>
-  <title>Piedmont Puppies</title>
+{% load static %}
+
+<!-- Bootstrap core CSS -->
+
+<link href="{% static 'css/signin.css' %}" rel="stylesheet">
+
+<!--SOCiAL BUTTONS-->
+<head> 
+  <link rel="stylesheet" type="text/css" href="social.css">
+  <link rel="stylesheet" href="{ % static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
 </head>
-  <body>
-    {% include 'navbar.html' %}
-    {% block content %}{% endblock %}
-  </body>
+
+<!-- Add font awesome icons -->
+<p>
+<a href="#" class="fab fa-facebook"></a>
+<a href="#" class="fab fa-instagram"></a>
+</p>
+
+
+
 </html>
+{% endblock %}

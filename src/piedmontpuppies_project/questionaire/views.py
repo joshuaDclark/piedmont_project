@@ -1,7 +1,8 @@
-from django.http import HttpResponse
-from django.views.generic import CreateView
-from .models import Person
+from django.views.generic import ListView, CreateView
+from .models import Person, Question
+from django.urls import reverse
 
-class PersonCreateView(CreateView):
-    model = Person
-    fields = ('name', 'email', 'job_title', 'bio')
+#---------------Questionaire Form-----------------------#
+
+class QuestionList(ListView):
+    model = Question
